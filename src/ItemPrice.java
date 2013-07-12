@@ -1,10 +1,10 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class ItemPricer {
+public class ItemPrice {
     private Map<String, Integer> prices = new HashMap<String, Integer>();
 
-    public ItemPricer() {
+    public ItemPrice() {
         prices.put("", 0);
         prices.put("A", 50);
         prices.put("B", 30);

@@ -1,17 +1,17 @@
 public class Checkout {
-    private ItemPricer itemPricer;
-    private Totaller totaller;
+    private Basket basket;
+    private PricingRules rules;
 
-    public Checkout(ItemPricer itemPricer, Totaller totaller) {
-        this.itemPricer = itemPricer;
-        this.totaller = totaller;
+    public Checkout(Basket basket, PricingRules rules) {
+        this.basket = basket;
+        this.rules = rules;
     }
 
     public void scan(String item) {
-        totaller.add(itemPricer.price(item));
+        basket.add(item);
     }
 
     public int total() {
-        return totaller.total();
+        return rules.price(basket);
     }
 }

@@ -14,7 +14,7 @@ public class CheckoutTester {
 
     @Test
     public void emptyBasket() {
-        assertEquals(0, price(""));
+        assertEquals(0, price());
     }
 
     @Test
@@ -27,12 +27,12 @@ public class CheckoutTester {
 
     @Test
     public void multipleItemsAddsPrice() {
-        assertEquals(100, price("AA"));
+        assertEquals(100, price("A", "A"));
     }
 
     @Test
     public void ThreeAsGetsA20pDiscount() {
-        assertEquals(130, price("AAA"));
-        assertEquals(180, price("AAAA"));
+        assertEquals(130, price("A", "A", "A"));
+        assertEquals(180, price("A", "A", "A", "A"));
     }
 }
