@@ -1,17 +1,22 @@
-public class Checkout {
-    private Basket basket;
-    private PricingRules rules;
+import java.util.List;
 
-    public Checkout(Basket basket, PricingRules rules) {
-        this.basket = basket;
-        this.rules = rules;
+public class Checkout {
+    private Total total;
+
+    private List<ItemListener> itemListeners;
+
+    public Checkout(Total total, List<ItemListener> itemListeners) {
+        this.total = total;
+        this.itemListeners = itemListeners;
     }
 
     public void scan(String item) {
-        basket.add(item);
+        for (ItemListener itemListener : itemListeners) {
+            itemListener.notifyItem(item, total);
+        }
     }
 
     public int total() {
-        return rules.price(basket);
+        return total.sum();
     }
 }

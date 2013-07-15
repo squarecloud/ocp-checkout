@@ -31,8 +31,24 @@ public class CheckoutTester {
     }
 
     @Test
+    public void multipleDifferentItemsAddsPrice() {
+        assertEquals(85, price("A", "C", "D"));
+    }
+
+    @Test
     public void ThreeAsGetsA20pDiscount() {
         assertEquals(130, price("A", "A", "A"));
         assertEquals(180, price("A", "A", "A", "A"));
     }
+
+    @Test
+    public void TwoBsGetA15pDiscount() {
+        assertEquals(45, price("B", "B"));
+    }
+
+//    @Test
+//    public void mealDeal() {
+//        assertEquals(85, price("A", "B", "C"));
+//        assertEquals(85, price("A", "B", "D"));
+//    }
 }
