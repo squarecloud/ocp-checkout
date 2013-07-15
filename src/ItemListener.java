@@ -1,3 +1,3 @@
 public interface ItemListener {
-    void notifyItem(String item, Total total);
+    void notifyItem(String item, PriceListener priceListener);
 }

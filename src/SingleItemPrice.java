@@ -5,7 +5,7 @@ public class SingleItemPrice implements ItemListener {
         this.itemPrice = itemPrice;
     }
 
-    public void notifyItem(String item, Total total) {
-        total.add(itemPrice.lookup(item));
+    public void notifyItem(String item, PriceListener priceListener) {
+        priceListener.add(itemPrice.lookup(item));
     }
 }

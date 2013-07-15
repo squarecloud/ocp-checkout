@@ -12,13 +12,13 @@ public class MultipleItemDiscount implements ItemListener {
     }
 
     @Override
-    public void notifyItem(String receivedItem, Total total) {
+    public void notifyItem(String receivedItem, PriceListener priceListener) {
         if(receivedItem.equals(item)) {
             count++;
         }
 
         if(count == quantity) {
-            total.add(-discountAmount);
+            priceListener.add(-discountAmount);
             count = 0;
         }
     }

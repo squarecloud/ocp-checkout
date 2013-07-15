@@ -46,9 +46,9 @@ public class CheckoutTester {
         assertEquals(45, price("B", "B"));
     }
 
-//    @Test
-//    public void mealDeal() {
-//        assertEquals(85, price("A", "B", "C"));
-//        assertEquals(85, price("A", "B", "D"));
-//    }
+    @Test
+    public void mealDeal() {
+        assertEquals(85, price("A", "B", "C"));
+        assertEquals(85, price("A", "B", "D"));
+    }
 }

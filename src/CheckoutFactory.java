@@ -18,6 +18,7 @@ public class CheckoutFactory {
         itemListeners.add(new SingleItemPrice(itemPrices));
         itemListeners.add(new MultipleItemDiscount("A", 3, 20));
         itemListeners.add(new MultipleItemDiscount("B", 2, 15));
+        itemListeners.add(new MealDealDiscount(itemPrices));
 
         return new Checkout(new Total(), itemListeners);
     }
